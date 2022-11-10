@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        #c{
+            background-color: black;
+            
+            
+            
+        }
+        .center{
+            display:flex;
+            
+            justify-content: center;
+        }
+        .pieceScoresCont{
+            display: flex;
+            justify-content: center;
+        }
+        .pieceScores{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            padding: 5px;
+            width:fit-content;
+            height:fit-content;
+            background-color: rgb(29, 29, 29);
+        }
+        .pieceScore{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin:5px;
+            width:180px;
+            height: 180px;
+            background-color: rgb(59, 59, 59);
+        }
+        .badnessScore{
+            color:white;
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: xx-large;
+        }
+        .pauseIcon{
+         
+            position: relative;
+            left:-40px;
+            top:14px;
+            width:40px;
+            height: 40px;
+            
+        }
+        .replayIcon{
+           
+            position: relative;
+            left:40px;
+            top:14px;
+            width:40px;
+            height: 40px;
+            
+        }
+        .icon{
+            
+            background-color:none;
+            border-radius: 2px;
+        }
+        .icon:hover{
+            background-color: rgb(70, 70, 70);
+        }
+        .badText{
+            font-weight: 600;
+            padding-top: 15px;
+            padding-left:100px;
+            padding-right: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #difficultySetter{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            width:300px;
+            height: 450px;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+
+    <div class="replayIcon" id="replayIcon"onclick="replay()">
+        <img src="replayIcon.png" class="replayIcon icon">
+    </div>
+    <div id="difficultySetter">
+        <h2 style="color:white;">Select difficulty</h2>
+        <input id='difficultySelector'type="range" min="0" max="6">
+    </div>
+    <canvas width="370px"height="600px"id="c"></canvas>
+
+    <div class='pauseIcon'id="pauseIcon"onclick="pause()">
+        <img src="pauseIcon.png" id='pauseIcon'class="pauseIcon icon">
+    </div>
+    
+</div>
+<div class="badText">
+    <div>
+        Good pieces
+    </div>
+    <div>
+       <---------------------------------------- the offical badness scale ---------------------------------------->
+    </div>
+    <div>
+        Bad pieces
+    </div>
+</div>
+<div class="pieceScoresCont">  
+    
+    <div class="pieceScores">
+        
+        <div class="pieceScore">
+            <img src="greenBrick.png">
+            <div class='badnessScore' id="badnessScoreI">1</div>
+        </div>
+        <div class="pieceScore">
+            <img src="yellowBrick.png">
+            <div class='badnessScore' id="badnessScoreZ">1</div>
+        </div>
+        <div class="pieceScore">
+            <img src="blueBrick.png">
+            <div class='badnessScore' id="badnessScoreRZ">1</div>
+        </div>
+        <div class="pieceScore">
+            <img src="redBrick.png">
+            <div class='badnessScore' id="badnessScoreT">1</div>
+        </div>
+
+        <div class="pieceScore">
+            <img src="lightBlueBrick.png">
+            <div class='badnessScore' id="badnessScoreS">1</div>
+        </div>
+        <div class="pieceScore">
+            <img src="purpleBrick.png">
+            <div class='badnessScore' id="badnessScoreL">1</div>
+        </div>
+        <div class="pieceScore">
+            <img src="orangeBrick.png">
+            <div class='badnessScore' id="badnessScoreRL">1</div>
+        </div>
+    </div>
+    
+</div>
+
+
+</body>
+<script src="app.js"></script>
+</html>
